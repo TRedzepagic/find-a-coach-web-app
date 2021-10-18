@@ -10,6 +10,7 @@ export default {
         };
 
         const token = context.rootGetters.token;
+        // This Firebase project/link is deprecated (deleted). You need to make your own Firebase project.
         const response = await fetch(`https://find-a-coach-web-app-a33d7-default-rtdb.europe-west1.firebasedatabase.app/coaches/${userId}.json?auth=` + token, {
             method: 'PUT',
             body: JSON.stringify(coachData),
@@ -31,6 +32,7 @@ export default {
         if (!payload.forceRefresh && !context.getters.shouldUpdate) {
             return
         }
+        // This Firebase project/link is deprecated (deleted). You need to make your own Firebase project.
         const response = await fetch(`https://find-a-coach-web-app-a33d7-default-rtdb.europe-west1.firebasedatabase.app/coaches.json`)
         
         const responseData = await response.json();

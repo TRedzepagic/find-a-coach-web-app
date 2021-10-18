@@ -6,6 +6,7 @@ export default {
             message: payload.message
         };
 
+        // This Firebase project/link is deprecated (deleted). You need to make your own Firebase project.
         const response = await fetch(`https://find-a-coach-web-app-a33d7-default-rtdb.europe-west1.firebasedatabase.app/requests/${payload.coachId}.json`, {
             method: 'POST',
             body: JSON.stringify(newRequest)
@@ -26,6 +27,8 @@ export default {
     async fetchRequests(context){
         const coachId = context.rootGetters.userId;
         const token = context.rootGetters.token;
+        
+        // This Firebase project/link is deprecated (deleted). You need to make your own Firebase project.
         const response = await fetch(`https://find-a-coach-web-app-a33d7-default-rtdb.europe-west1.firebasedatabase.app/requests/${coachId}.json?auth=` + token);
         const responseData = await response.json();
 
